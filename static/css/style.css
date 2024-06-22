@@ -1,0 +1,107 @@
+
+/* <!-- Great number Game Assigenment
+Author by :Rahma Fares
+Email :Rahmafaris981@gmail.com--> */
+
+.container {
+display: flex;
+font-family: Arial, sans-serif;
+flex-direction: column;
+text-align: center;
+align-items: center;
+}
+
+p{
+font-weight: bold;
+}
+.submitBtn{
+background-color: #eb7477;
+border-style: solid;
+color: white;
+box-shadow:3px 5px 3px #cf2a27;
+border-color: #eb7477;
+width: 70px;
+height: 30px;
+margin: 1% 0;
+}
+.gameOver{
+margin: 20px;
+font-size: 1.2em;
+color:white;
+align-items: center;
+background-color: #cf2a27;
+width: 10%;
+height: 20%;
+padding: 5% ;
+
+}
+form {
+margin: 20px;
+}
+
+h4{
+margin: 20px;
+font-size: 1.2em;
+color:white;
+align-items: center;
+background-color: #cf2a27;
+width: 10%;
+height: 20%;
+padding: 5% ;   
+}
+
+h1{
+margin: 20px;
+color:white;
+align-items: center;
+border-color: black;
+border-style: solid;
+background-color:#009e0f;
+width: 10%;
+height: 20%;
+padding: 5% ;   
+}
+.PlayagainBtn{
+box-shadow:3px 2px 3px black;;
+border-color: black;
+width: 90px;
+height: 30px;
+margin: 1% 0;
+}
+
+h8{
+margin-top: 5%;
+font-size: 34px;
+font-weight: bold;
+font-style: italic;
+}
+
+.tableStyle{
+box-shadow:3px 2px 3px black;;
+border-color: black;
+width: 20%;
+height: 30%;
+margin: 1% 0;
+border-style: solid;
+padding: 4%;
+
+}
+.Name{
+font-weight: bold;
+color: #009e0f;
+}
+.attempts{
+margin-left: 3%;
+font-weight: bold;
+color: red;
+}
+.submitWinBtn{
+background-color:  #3d97e0;
+border-style: solid;
+color: white;
+box-shadow:3px 2px 3px #3d97e0;
+border-color: black;
+width: 70px;
+height: 30px;
+margin: 1% 0;
+}
