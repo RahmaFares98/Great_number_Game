@@ -2,7 +2,7 @@ from flask import Flask, render_template, session, redirect, url_for, request
 import random
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key_here'
+app.secret_key = 'secret_key'
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -10,8 +10,9 @@ def index():
         session['number'] =random.randint(1, 100)
         session['attempts'] = 0
         session['guesses'] = []
+        session['flag']=False
+    print(session['attempts'],session['flag'], session['number'] )
     message = None
-
     if request.method == 'POST':
         guess = int(request.form['guess'])
         session['attempts'] += 1
@@ -22,6 +23,8 @@ def index():
         elif guess > session['number']:
             message = "Too high!"
         else:
+            session['flag']=True
+            print(session['attempts'],session['flag'], session['number'] )
             return redirect(url_for('winner'))
 
         if session['attempts'] >= 5:
@@ -36,7 +39,6 @@ def winner():
         winners = session.get('winners', [])
         winners.append({'name': name, 'attempts': session['attempts']})
         session['winners'] = winners
-
         # Clear session data for new game
         session.pop('number', None)
         session.pop('attempts', None)
@@ -44,6 +46,15 @@ def winner():
         return redirect(url_for('leaderboard'))
 
     return render_template('winner.html', attempts=session['attempts'])
+@app.route('/playagain')
+def playagain ():
+        if session.get('flag', True):
+            session['attempts'] = 0 
+            session['flag']=False
+            session.pop('number', None)
+            session.pop('attempts', None)
+            session.pop('guesses', None)
+        return redirect(url_for('index'))
 
 @app.route('/loser')
 def loser(): # Clear session data for new game

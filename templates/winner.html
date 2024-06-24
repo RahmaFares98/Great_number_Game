@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Great_style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/Great_script.js') }}"></script>
     <title>Congrats!</title>
 
 </head>
@@ -12,14 +12,14 @@
 <body>
     <div class="container">
         <h1>{{ session['number']}} was the Number!
-            <span> <button onclick="playAgain(this)" class="PlayagainBtn" type="submit">Play again !</button>
+            <span> <button a onclick="playAgain()" class="PlayagainBtn" type="submit">Play again !</button>
             </span>
         </h1>
         <p>You guessed the number in {{ session['attempts'] }} attempts.</p>
         <form method="POST" action="/winner">
             <label for="name">Enter your name:</label>
             <input type="text" id="name" name="name" required>
-            <button class="submitWinBtn" type="submit">Submit</button>
+            <button  class="submitWinBtn" type="submit">Submit</button>
         </form>
     </div>
 
